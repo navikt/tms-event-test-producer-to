@@ -16,6 +16,12 @@ kotlin {
     }
 }
 
+dependencies {
+    implementation(TmsCommonLib.utils)
+    implementation(Ktor.Server.core)
+}
+
+
 
 
 repositories {
