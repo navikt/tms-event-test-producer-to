@@ -19,13 +19,13 @@ spec:
   leaderElection: true
   ingresses:
     - "https://www.ansatt.dev.nav.no/tms-event-test-producer-to"
-  azure:
-    application:
-      enabled: true
-      allowAllUsers: true
+  tokenx:
+    enabled: true
+  idporten:
+    enabled: true
     sidecar:
       enabled: true
-      autoLogin: true
+      level: Level3
   replicas:
     min: 1
     max: 1
