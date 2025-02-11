@@ -45,3 +45,7 @@ repositories {
     mavenLocal()
 }
 
+
+application {
+    mainClass.set("no.nav.tms.event.test.producer.to.ApplicationKt")
+}
