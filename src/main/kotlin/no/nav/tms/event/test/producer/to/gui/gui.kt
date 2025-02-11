@@ -36,8 +36,9 @@ fun Application.gui() {
 
     routing {
         meta()
-
+        authenticate {
             startPage()
+        }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
         }
