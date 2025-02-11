@@ -1,0 +1,10 @@
+.homeLink:hover{
+    text-decoration: none;
+}
+.homeLink p{
+    margin-left: 5px;
+    font-weight: var(--a-font-weight-bold);
+    text-transform: uppercase;
+    display: inline;
+    color: var(--a-text-default);
+}

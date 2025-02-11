@@ -17,8 +17,21 @@ kotlin {
 }
 
 dependencies {
-    implementation(TmsCommonLib.utils)
+    implementation(KotliQuery.kotliquery)
+    implementation(KotlinLogging.logging)
     implementation(Ktor.Server.core)
+    implementation(Ktor.Server.netty)
+    implementation(Ktor.Server.htmlDsl)
+    implementation(Ktor.Server.statusPages)
+    implementation(Ktor.Server.auth)
+    implementation(Ktor.Server.authJwt)
+    implementation(Ktor.Client.contentNegotiation)
+    implementation(Ktor.Client.apache)
+    implementation(Ktor.Serialization.jackson)
+    implementation(TmsCommonLib.utils)
+    implementation(TmsKtorTokenSupport.idportenSidecar)
+
+    testImplementation(TmsKtorTokenSupport.idportenSidecarMock)
 }
 
 
