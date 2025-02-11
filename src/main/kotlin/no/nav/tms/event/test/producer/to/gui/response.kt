@@ -36,10 +36,12 @@ suspend fun ApplicationCall.respondHtmlContent(
                 builder()
             }
             div {
-                id = "decorator-env"
-                attributes["data-src"] = "https://dekoratoren.ekstern.dev.nav.no/env?simpleHeader=true"
+                id = "decorator-footer"
             }
-
+            div {
+                id = "decorator-env"
+                attributes["data-src"] = "https://dekoratoren.ekstern.dev.nav.no/env?simpleHeader=true&simpleFooter=true"
+            }
         }
     }
 }
