@@ -38,7 +38,6 @@ suspend fun ApplicationCall.respondHtmlContent(
             div {
                 id = "decorator-env"
                 attributes["data-src"] = "https://dekoratoren.ekstern.dev.nav.no/env?simpleHeader=true"
-                //"{https://dekoratoren.ekstern.dev.nav.no/env?sime=true}"
             }
 
         }
