@@ -19,6 +19,7 @@ spec:
   leaderElection: true
   ingresses:
     - "https://www.ansatt.dev.nav.no/tms-event-test-producer-to"
+    - "https://tms-etp.ansatt.dev.nav.no"
   tokenx:
     enabled: true
   idporten:

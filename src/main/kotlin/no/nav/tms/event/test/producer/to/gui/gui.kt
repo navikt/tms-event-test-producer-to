@@ -6,6 +6,7 @@ import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.http.content.*
 import io.ktor.server.plugins.statuspages.*
+import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import no.nav.tms.token.support.idporten.sidecar.LevelOfAssurance
@@ -18,6 +19,8 @@ fun Application.gui() {
 
     install(StatusPages) {
         status(HttpStatusCode.NotFound) { call, status ->
+            log.error { call.request.path() }
+
             call.respondText(text = "404: Page Not Found", status = status)
         }
 
