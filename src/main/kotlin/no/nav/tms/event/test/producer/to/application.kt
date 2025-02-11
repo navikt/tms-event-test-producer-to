@@ -7,11 +7,13 @@ import no.nav.tms.event.test.producer.to.gui.gui
 
 
 fun main() {
+    val environment = Environment()
+
     embeddedServer(
     Netty,
     port = getEnvVarAsInt("PORT", 8081),
     module = {
-        gui()
+        gui(environment.navDecoratorenUrl)
     }
 ).start(wait = true)
 }

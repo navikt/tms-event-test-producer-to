@@ -8,6 +8,7 @@ import kotlinx.html.*
 suspend fun ApplicationCall.respondHtmlContent(
     title: String,
     builder: MAIN.() -> Unit,
+    navDecoratorenUrl: String,
 ) {
 
     this.respondHtml {
@@ -20,11 +21,11 @@ suspend fun ApplicationCall.respondHtmlContent(
             }
             link {
                 rel = "stylesheet"
-                href = "https://dekoratoren.ekstern.dev.nav.no/css/client.css"
+                href = "${navDecoratorenUrl}/css/client.css"
             }
 
             script {
-                src="https://dekoratoren.ekstern.dev.nav.no/client.js"
+                src="${navDecoratorenUrl}/client.js"
             }
         }
         body {
@@ -40,7 +41,7 @@ suspend fun ApplicationCall.respondHtmlContent(
             }
             div {
                 id = "decorator-env"
-                attributes["data-src"] = "https://dekoratoren.ekstern.dev.nav.no/env?simpleHeader=true&simpleFooter=true&shareScreen=false&chatbot=false"
+                attributes["data-src"] = "${navDecoratorenUrl}/env?simpleHeader=true&simpleFooter=true&shareScreen=false&chatbot=false"
             }
         }
     }

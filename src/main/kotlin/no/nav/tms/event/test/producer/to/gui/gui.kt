@@ -12,7 +12,7 @@ import io.ktor.server.routing.*
 import no.nav.tms.token.support.idporten.sidecar.LevelOfAssurance
 import no.nav.tms.token.support.idporten.sidecar.idPorten
 
-fun Application.gui() {
+fun Application.gui(navDecoratorenUrl: String) {
 
     //TODO setup logger
     val log = KotlinLogging.logger { }
@@ -40,7 +40,7 @@ fun Application.gui() {
     routing {
         meta()
         authenticate {
-            startPage()
+            startPage(navDecoratorenUrl)
         }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
