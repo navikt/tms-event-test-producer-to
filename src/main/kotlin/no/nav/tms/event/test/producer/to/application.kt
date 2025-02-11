@@ -11,7 +11,6 @@ fun main() {
     Netty,
     port = getEnvVarAsInt("PORT", 8081),
     module = {
-        rootPath = "tms-event-test-producer-to"
         gui()
     }
 ).start(wait = true)
