@@ -19,6 +19,7 @@ kotlin {
 dependencies {
     implementation(KotliQuery.kotliquery)
     implementation(KotlinLogging.logging)
+    implementation(Logstash.logbackEncoder)
     implementation(Ktor.Server.core)
     implementation(Ktor.Server.netty)
     implementation(Ktor.Server.htmlDsl)
