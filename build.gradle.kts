@@ -1,5 +1,3 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
     kotlin("jvm").version(Kotlin.version)
@@ -33,6 +31,8 @@ dependencies {
     implementation(TmsCommonLib.utils)
     implementation(TmsKtorTokenSupport.idportenSidecar)
     implementation(TmsKtorTokenSupport.tokendingsExchange)
+    implementation(TmsSoknadskvittering.kotlinBuilder)
+    implementation(Kafka.clients)
     testImplementation(TmsKtorTokenSupport.idportenSidecarMock)
 }
 

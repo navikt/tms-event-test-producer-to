@@ -7,10 +7,10 @@ import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.serialization.jackson.*
 import no.nav.tms.common.util.config.StringEnvVar.getEnvVar
 
-data class Environment(
-    val navDecoratorenUrl: String = getEnvVar("NAV_DECORATOREN_URL"),
+object Environment {
+    val navDecoratorenUrl: String = getEnvVar("NAV_DECORATOREN_URL")
     val soknadskvitteringClientId: String = getEnvVar("SOKNADSKVITTERING_CLIENT_ID")
-)
+}
 
 
 

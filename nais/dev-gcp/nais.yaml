@@ -20,6 +20,8 @@ spec:
   ingresses:
     - "https://www.ansatt.dev.nav.no/tms-event-test-producer-to"
     - "https://tms-etp.ansatt.dev.nav.no"
+  kafka:
+    pool: nav-dev
   tokenx:
     enabled: true
   idporten:

@@ -14,7 +14,6 @@ import no.nav.tms.token.support.idporten.sidecar.LevelOfAssurance
 import no.nav.tms.token.support.idporten.sidecar.idPorten
 
 fun Application.gui(
-    navDecoratorenUrl: String,
     tokenFetcher: TokenFetcher,
     soknadskvitteringUrl: String,
     httpClient: HttpClient
@@ -50,8 +49,7 @@ fun Application.gui(
     routing {
         meta()
         authenticate() {
-            startPage(navDecoratorenUrl, tokenFetcher, soknadskvitteringUrl, httpClient
-            )
+            startPage(tokenFetcher, soknadskvitteringUrl, httpClient)
         }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
