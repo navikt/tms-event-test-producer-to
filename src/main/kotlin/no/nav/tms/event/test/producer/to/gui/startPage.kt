@@ -26,7 +26,7 @@ fun Route.startPage(
                 h1 { +"Opprett soknadskvittering" }
                 p { +"Her kan du opprette og redigere søknadseventer for testing på Min side. " }
                 h2 { +"Liste med soknadskvitteringer" }
-                p { +"${soknadsKvitteringer.toString()}" }
+                p { +"${soknadsKvitteringer}" }
             }, Environment.navDecoratorenUrl
         )
     }
