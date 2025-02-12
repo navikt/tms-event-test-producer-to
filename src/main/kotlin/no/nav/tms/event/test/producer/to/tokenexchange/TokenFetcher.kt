@@ -10,7 +10,7 @@ class TokenFetcher(
         try {
             tokendingsService.exchangeToken(token = token, targetApp = soknadskvitteringClientId)
         } catch (e: Exception) {
-            throw Exception("henting av token for soknadskvittering med clientId $soknadskvitteringClientId feiler")
+            throw Exception("henting av token for soknadskvittering med clientId $soknadskvitteringClientId feiler  ${e.cause}")
         }
     }
 }
