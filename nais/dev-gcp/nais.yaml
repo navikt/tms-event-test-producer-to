@@ -46,4 +46,4 @@ spec:
     - name: NAV_DECORATOREN_URL
       value: https://dekoratoren.ekstern.dev.nav.no
     - name: SOKNADSKVITTERING_CLIENT_ID
-      value: tms-soknadskvittering
+      value: dev-gcp:min-side:tms-soknadskvittering
