@@ -15,7 +15,7 @@ object Kafka {
             put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, getEnvVar("KAFKA_BROKERS"))
             put(
                 ProducerConfig.CLIENT_ID_CONFIG,
-                "tms-event-test-producer"
+                "tms-event-test-producer-to"
             )
             put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer::class.java)
             put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer::class.java)
