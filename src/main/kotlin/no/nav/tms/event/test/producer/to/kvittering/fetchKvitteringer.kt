@@ -34,11 +34,11 @@ suspend fun fetchKvitteringer(
 ) : ApiDto.SoknadsKvittering{
     val soknadskvitteringToken = tokenFetcher.soknadskvitteringToken(tokenXUser)
 
-    return httpClient.get("$soknadskvitteringUrl/kvitteringer/$soknadsId") {
+    return httpClient.get("$soknadskvitteringUrl/kvittering/$soknadsId") {
         header("Authorization", "Bearer $soknadskvitteringToken")
     }.let { response ->
         if (response.status != HttpStatusCode.OK) {
-            throw Exception("Feil ved henting av enkel soknad: ${response.status}")
+            throw Exception("Feil ved henting av enkel soknad id: $soknadsId  and  status: ${response.status}")
         } else {
             response.body()
         }
