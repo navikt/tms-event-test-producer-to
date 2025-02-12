@@ -50,7 +50,7 @@ fun Route.soknadPage(
                             div {
                                 soknad.mottatteVedlegg.map { mottattVedlegg ->
                                     ul {
-                                        li{ + mottattVedlegg.tittel }
+                                        li { +mottattVedlegg.tittel }
                                     }
                                 }
                             }
@@ -59,13 +59,18 @@ fun Route.soknadPage(
                     div("navds-form-summary__answer") {
                         this@dl.dt("navds-label") { +"Vedlegg mangler" }
                         this@dl.dd("navds-form-summary__value navds-body-long navds-body-long--medium") {
-                            div {
-                                soknad.manglendeVedlegg.map { mottattVedlegg ->
-                                    ul {
-                                        li{ + mottattVedlegg.tittel }
+                            soknad.manglendeVedlegg.map { mottattVedlegg ->
+                                ul {
+                                    li {
+                                        span { +mottattVedlegg.tittel }
+                                        a(
+                                            href = "#",
+                                            classes = "navds-link navds-link--action marker-som-mottatt"
+                                        ) { +"Marker som mottatt"}
                                     }
                                 }
                             }
+
                         }
                     }
                 }
