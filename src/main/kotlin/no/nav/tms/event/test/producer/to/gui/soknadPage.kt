@@ -45,7 +45,7 @@ fun Route.soknadPage(
                         )
                     }
                     div("navds-form-summary__answer") {
-                        this@dl.dt("navds-label") { +"Vedlegger motatt" }
+                        this@dl.dt("navds-label") { +"Vedlegg motatt" }
                         this@dl.dd("navds-form-summary__value navds-body-long navds-body-long--medium") {
                             div {
                                 soknad.mottatteVedlegg.map { mottattVedlegg ->
@@ -57,7 +57,7 @@ fun Route.soknadPage(
                         }
                     }
                     div("navds-form-summary__answer") {
-                        this@dl.dt("navds-label") { +"Vedlegger mangler" }
+                        this@dl.dt("navds-label") { +"Vedlegg mangler" }
                         this@dl.dd("navds-form-summary__value navds-body-long navds-body-long--medium") {
                             div {
                                 soknad.manglendeVedlegg.map { mottattVedlegg ->
