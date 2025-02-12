@@ -7,7 +7,7 @@ import kotlinx.html.h2
 import kotlinx.html.p
 import no.nav.tms.event.test.producer.to.kvittering.fetchKvitteringer
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
-import no.nav.tms.token.support.tokenx.validation.user.TokenXUserFactory
+import no.nav.tms.token.support.idporten.sidecar.user.IdportenUserFactory
 
 
 fun Route.startPage(
@@ -17,9 +17,9 @@ fun Route.startPage(
     httpClient: HttpClient
 ) {
     get {
-        val user = TokenXUserFactory.createTokenXUser(call)
+        val token = IdportenUserFactory.createIdportenUser(call).tokenString
         val soknadsKvitteringer =
-            fetchKvitteringer(tokenFetcher, soknadskvitteringUrl, httpClient, user)
+            fetchKvitteringer(tokenFetcher, soknadskvitteringUrl, httpClient, token)
 
         call.respondHtmlContent(
             "Min side søknad test producer", {
