@@ -25,3 +25,8 @@ h2{
     padding: var(--a-spacing-7) 0;
     font-size: var(--a-font-size-heading-medium);
 }
+
+
+.marker-som-mottatt{
+    padding-left: 1rem;
+}
