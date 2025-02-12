@@ -47,7 +47,12 @@ repositories {
     mavenLocal()
 }
 
-
 application {
     mainClass.set("no.nav.tms.event.test.producer.to.ApplicationKt")
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("net.minidev:json-smart:2.5.1")
+    }
 }
