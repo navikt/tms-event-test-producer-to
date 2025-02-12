@@ -50,7 +50,7 @@ fun Route.soknadPage(
                             div {
                                 soknad.mottatteVedlegg.map { mottattVedlegg ->
                                     ul {
-                                        li{ mottattVedlegg.tittel }
+                                        li{ + mottattVedlegg.tittel }
                                     }
                                 }
                             }
@@ -62,7 +62,7 @@ fun Route.soknadPage(
                             div {
                                 soknad.manglendeVedlegg.map { mottattVedlegg ->
                                     ul {
-                                        li{ mottattVedlegg.tittel }
+                                        li{ + mottattVedlegg.tittel }
                                     }
                                 }
                             }
