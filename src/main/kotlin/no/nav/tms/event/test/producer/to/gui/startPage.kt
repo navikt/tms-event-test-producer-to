@@ -2,6 +2,7 @@ package no.nav.tms.event.test.producer.to.gui
 
 import io.ktor.client.*
 import io.ktor.server.routing.*
+import kotlinx.html.a
 import kotlinx.html.h1
 import kotlinx.html.h2
 import kotlinx.html.p
@@ -26,7 +27,14 @@ fun Route.startPage(
                 h1 { +"Opprett soknadskvittering" }
                 p { +"Her kan du opprette og redigere søknadseventer for testing på Min side. " }
                 h2 { +"Liste med soknadskvitteringer" }
-                p { +"${soknadsKvitteringer}" }
+                soknadsKvitteringer.map { kvittering ->
+                    p {
+                        a(href = kvittering.linkSoknad ?: "#") {
+                            +kvittering.tittel
+                        }
+                    }
+                }
+
             }, Environment.navDecoratorenUrl
         )
     }

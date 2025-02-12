@@ -1,6 +1,7 @@
 package no.nav.tms.event.test.producer.to.kvittering
 
 import io.ktor.client.*
+import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
@@ -11,7 +12,7 @@ suspend fun fetchKvitteringer(
     soknadskvitteringUrl: String,
     httpClient: HttpClient,
     tokenXUser: String
-) : String{
+) : List<ApiDto.SoknadsKvittering>{
     val soknadskvitteringToken = tokenFetcher.soknadskvitteringToken(tokenXUser)
 
     return httpClient.get("$soknadskvitteringUrl/kvitteringer/alle") {
@@ -20,7 +21,7 @@ suspend fun fetchKvitteringer(
         if (response.status != HttpStatusCode.OK) {
             throw Exception("Feil ved henting av kvitteringer: ${response.status}")
         } else {
-            response.bodyAsText()
+            response.body()
         }
     }
 
