@@ -29,7 +29,7 @@ fun Route.startPage(
                 h2 { +"Liste med soknadskvitteringer" }
                 soknadsKvitteringer.map { kvittering ->
                     p {
-                        a(href = kvittering.linkSoknad ?: "#") {
+                        a(href = "/soknad/${kvittering.soknadsId}") {
                             +kvittering.tittel
                         }
                     }
