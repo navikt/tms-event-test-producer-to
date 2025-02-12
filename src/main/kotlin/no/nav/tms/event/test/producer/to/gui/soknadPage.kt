@@ -28,15 +28,13 @@ fun Route.soknadPage(
             "Min side søknad test producer", {
                 h1 { +"Om søknaden" }
                 dl {
-                    dt { + "tittel"}
-                    dd { + (soknad.tittel) }
                     unsafe {+ descriptionItems("tittel", soknad.tittel)}
-                    unsafe {descriptionItems("temakode", soknad.temakode)}
-                    unsafe {descriptionItems("linkSoknad", soknad.linkSoknad)}
-                    unsafe {descriptionItems("skjemanummer", soknad.skjemanummer)}
-                    unsafe {descriptionItems("journalpostId", soknad.journalpostId)}
-                    unsafe {descriptionItems("fristEttersending", soknad.fristEttersending.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))}
-                    unsafe {descriptionItems("dato opprettet", soknad.opprettet.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss z")))}
+                    unsafe {+ descriptionItems("temakode", soknad.temakode)}
+                    unsafe {+ descriptionItems("linkSoknad", soknad.linkSoknad)}
+                    unsafe {+ descriptionItems("skjemanummer", soknad.skjemanummer)}
+                    unsafe {+ descriptionItems("journalpostId", soknad.journalpostId)}
+                    unsafe {+ descriptionItems("fristEttersending", soknad.fristEttersending.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))}
+                    unsafe {+ descriptionItems("dato opprettet", soknad.opprettet.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss z")))}
                 }
 
             }, Environment.navDecoratorenUrl
