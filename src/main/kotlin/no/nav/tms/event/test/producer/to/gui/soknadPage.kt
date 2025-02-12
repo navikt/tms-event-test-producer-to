@@ -26,7 +26,7 @@ fun Route.soknadPage(
         call.respondHtmlContent(
             "Min side søknad test producer", {
                 a(
-                    href = "",
+                    href = "/",
                     classes = "navds-link navds-link--action tilbake-til-alle-soknader"
                 ) {
                     +"Tilbake til alle søknader"
