@@ -34,7 +34,7 @@ fun Route.soknadPage(
                     unsafe {+ descriptionItems("skjemanummer", soknad.skjemanummer)}
                     unsafe {+ descriptionItems("journalpostId", soknad.journalpostId)}
                     unsafe {+ descriptionItems("fristEttersending", soknad.fristEttersending.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))}
-                    unsafe {+ descriptionItems("dato opprettet", soknad.opprettet.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss z")))}
+                    unsafe {+ descriptionItems("dato opprettet", soknad.opprettet.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss")))}
                 }
 
             }, Environment.navDecoratorenUrl
