@@ -26,7 +26,7 @@ fun Route.soknadPage(
 
         call.respondHtmlContent(
             "Min side søknad test producer", {
-                h1 { +"Om søknaden" }
+                h1 { +"Detaljer om søknaden" }
                 dl("navds-form-summary__answers") {
                     unsafe {+ descriptionItems("tittel", soknad.tittel)}
                     unsafe {+ descriptionItems("temakode", soknad.temakode)}
