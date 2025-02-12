@@ -27,10 +27,12 @@ dependencies {
     implementation(Ktor.Server.authJwt)
     implementation(Ktor.Client.contentNegotiation)
     implementation(Ktor.Client.apache)
+    implementation(Ktor.Client.core)
     implementation(Ktor.Serialization.jackson)
     implementation(TmsCommonLib.utils)
     implementation(TmsKtorTokenSupport.idportenSidecar)
-
+    implementation(TmsKtorTokenSupport.tokenXValidation)
+    implementation(TmsKtorTokenSupport.tokendingsExchange)
     testImplementation(TmsKtorTokenSupport.idportenSidecarMock)
 }
 

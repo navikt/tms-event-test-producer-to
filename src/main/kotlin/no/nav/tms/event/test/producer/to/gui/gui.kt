@@ -1,6 +1,7 @@
 package no.nav.tms.event.test.producer.to.gui
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import io.ktor.client.*
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -8,10 +9,16 @@ import io.ktor.server.http.content.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
 import no.nav.tms.token.support.idporten.sidecar.LevelOfAssurance
 import no.nav.tms.token.support.idporten.sidecar.idPorten
 
-fun Application.gui(navDecoratorenUrl: String) {
+fun Application.gui(
+    navDecoratorenUrl: String,
+    tokenFetcher: TokenFetcher,
+    soknadskvitteringUrl: String,
+    httpClient: HttpClient
+) {
 
     //TODO setup logger
     val log = KotlinLogging.logger { }
@@ -28,7 +35,8 @@ fun Application.gui(navDecoratorenUrl: String) {
 
         //TODO handle ulike error-exceptions
         exception<Throwable> { call, cause ->
-            log.error(cause) { "Ukjent feil" }
+            call.respond(HttpStatusCode.InternalServerError)
+            log.warn(cause) { "Ukjent feil: ${cause.localizedMessage}" }
         }
     }
 
@@ -42,7 +50,8 @@ fun Application.gui(navDecoratorenUrl: String) {
     routing {
         meta()
         authenticate {
-            startPage(navDecoratorenUrl)
+            startPage(navDecoratorenUrl, tokenFetcher, soknadskvitteringUrl, httpClient
+            )
         }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
