@@ -1,6 +1,5 @@
 package no.nav.tms.event.test.producer.to.gui
 
-import io.ktor.server.html.*
 import kotlinx.html.stream.createHTML
 import no.nav.tms.event.test.producer.to.kvittering.fetchEnkelSoknad
 
