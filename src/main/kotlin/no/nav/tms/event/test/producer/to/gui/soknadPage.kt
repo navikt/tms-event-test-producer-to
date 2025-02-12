@@ -30,7 +30,7 @@ fun Route.soknadPage(
                 dl {
                     dt { + "tittel"}
                     dd { + (soknad.tittel) }
-                    unsafe {descriptionItems("tittel", soknad.tittel)}
+                    unsafe {+ descriptionItems("tittel", soknad.tittel)}
                     unsafe {descriptionItems("temakode", soknad.temakode)}
                     unsafe {descriptionItems("linkSoknad", soknad.linkSoknad)}
                     unsafe {descriptionItems("skjemanummer", soknad.skjemanummer)}
@@ -46,7 +46,7 @@ fun Route.soknadPage(
 
 
 
-fun descriptionItems (label: String, value: String?) {createHTML().run{
+fun descriptionItems (label: String, value: String?) = createHTML().run{
     dt { + label}
     dd { + (value ?: "null") }
-}}
+}
