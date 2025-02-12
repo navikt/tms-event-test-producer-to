@@ -10,8 +10,8 @@ import kotlinx.html.*
 import no.nav.tms.event.test.producer.to.Environment
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
 import no.nav.tms.token.support.idporten.sidecar.user.IdportenUserFactory
-import kotlinx.html.dt
-import kotlinx.html.dd
+import java.time.format.DateTimeFormatter
+
 
 fun Route.soknadPage(
     tokenFetcher: TokenFetcher,
@@ -28,8 +28,18 @@ fun Route.soknadPage(
         call.respondHtmlContent(
             "Min side søknad test producer", {
                 h1 { +"Om søknaden" }
-                listElement("tittel", soknad.tittel)
-                listElement("temakode", soknad.temakode)
+                dl {
+                    dt { + "tittel"}
+                    dd { + (soknad.tittel) }
+                    unsafe {descriptionItems("tittel", soknad.tittel)}
+                    unsafe {descriptionItems("temakode", soknad.temakode)}
+                    unsafe {descriptionItems("linkSoknad", soknad.linkSoknad)}
+                    unsafe {descriptionItems("skjemanummer", soknad.skjemanummer)}
+                    unsafe {descriptionItems("journalpostId", soknad.journalpostId)}
+                    unsafe {descriptionItems("fristEttersending", soknad.fristEttersending.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss z")))}
+                    unsafe {descriptionItems("dato opprettet", soknad.opprettet.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss z")))}
+                }
+
             }, Environment.navDecoratorenUrl
         )
     }
@@ -37,7 +47,7 @@ fun Route.soknadPage(
 
 
 
-fun listElement (label: String, value: String?) {createHTML().dl{
+fun descriptionItems (label: String, value: String?) {createHTML().run{
     dt { + label}
     dd { + (value ?: "null") }
 }}
