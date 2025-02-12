@@ -12,6 +12,7 @@ import io.ktor.server.routing.*
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
 import no.nav.tms.token.support.idporten.sidecar.LevelOfAssurance
 import no.nav.tms.token.support.idporten.sidecar.idPorten
+import no.nav.tms.token.support.tokenx.validation.tokenX
 
 fun Application.gui(
     navDecoratorenUrl: String,
@@ -44,6 +45,10 @@ fun Application.gui(
         idPorten {
             setAsDefault = true
             levelOfAssurance = LevelOfAssurance.SUBSTANTIAL
+        }
+        tokenX {
+            setAsDefault = false
+            levelOfAssurance = no.nav.tms.token.support.tokenx.validation.LevelOfAssurance.SUBSTANTIAL
         }
     }
 

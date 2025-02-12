@@ -17,8 +17,9 @@ fun Route.startPage(
     httpClient: HttpClient
 ) {
     get {
+        val user = TokenXUserFactory.createTokenXUser(call)
         val soknadsKvitteringer =
-            fetchKvitteringer(tokenFetcher, soknadskvitteringUrl, httpClient, TokenXUserFactory.createTokenXUser(call))
+            fetchKvitteringer(tokenFetcher, soknadskvitteringUrl, httpClient, user)
 
         call.respondHtmlContent(
             "Min side søknad test producer", {
