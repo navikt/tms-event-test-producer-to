@@ -25,4 +25,23 @@ suspend fun fetchKvitteringer(
         }
     }
 
+}suspend fun fetchEnkelSoknad(
+    tokenFetcher: TokenFetcher,
+    soknadskvitteringUrl: String,
+    httpClient: HttpClient,
+    tokenXUser: String,
+    soknadsId: String
+) : ApiDto.SoknadsKvittering{
+    val soknadskvitteringToken = tokenFetcher.soknadskvitteringToken(tokenXUser)
+
+    return httpClient.get("$soknadskvitteringUrl/kvitteringer/$soknadsId") {
+        header("Authorization", "Bearer $soknadskvitteringToken")
+    }.let { response ->
+        if (response.status != HttpStatusCode.OK) {
+            throw Exception("Feil ved henting av enkel soknad: ${response.status}")
+        } else {
+            response.body()
+        }
+    }
+
 }

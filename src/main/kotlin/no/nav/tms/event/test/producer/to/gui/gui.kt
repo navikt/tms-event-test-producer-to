@@ -50,6 +50,7 @@ fun Application.gui(
         meta()
         authenticate() {
             startPage(tokenFetcher, soknadskvitteringUrl, httpClient)
+            soknadPage(tokenFetcher, soknadskvitteringUrl, httpClient)
         }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
