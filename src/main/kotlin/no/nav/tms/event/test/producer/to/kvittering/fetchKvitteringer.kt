@@ -11,7 +11,7 @@ suspend fun fetchKvitteringer(
     soknadskvitteringUrl: String,
     httpClient: HttpClient,
     tokenXUser: String
-) {
+) : String{
     val soknadskvitteringToken = tokenFetcher.soknadskvitteringToken(tokenXUser)
 
     return httpClient.get("$soknadskvitteringUrl/kvitteringer/alle") {
