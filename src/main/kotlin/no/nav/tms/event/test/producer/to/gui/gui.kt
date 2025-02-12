@@ -35,8 +35,8 @@ fun Application.gui(
 
         //TODO handle ulike error-exceptions
         exception<Throwable> { call, cause ->
+            log.warn(cause) { "Ukjent feil: $cause" }
             call.respond(HttpStatusCode.InternalServerError)
-            log.warn(cause) { "Ukjent feil: ${cause.localizedMessage}" }
         }
     }
 
