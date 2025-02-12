@@ -2,10 +2,7 @@ package no.nav.tms.event.test.producer.to.gui
 
 import io.ktor.client.*
 import io.ktor.server.routing.*
-import kotlinx.html.a
-import kotlinx.html.h1
-import kotlinx.html.h2
-import kotlinx.html.p
+import kotlinx.html.*
 import no.nav.tms.event.test.producer.to.Environment
 import no.nav.tms.event.test.producer.to.kvittering.fetchKvitteringer
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
@@ -27,10 +24,12 @@ fun Route.startPage(
                 h1 { +"Opprett soknadskvittering" }
                 p { +"Her kan du opprette og redigere søknadseventer for testing på Min side. " }
                 h2 { +"Liste med soknadskvitteringer" }
-                soknadsKvitteringer.map { kvittering ->
-                    p {
-                        a(href = "/soknad/${kvittering.soknadsId}") {
-                            +kvittering.tittel
+                ul {
+                    soknadsKvitteringer.map { kvittering ->
+                        li {
+                            a(href = "/soknad/${kvittering.soknadsId}") {
+                                +kvittering.tittel
+                            }
                         }
                     }
                 }
