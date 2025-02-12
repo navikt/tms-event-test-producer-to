@@ -27,7 +27,7 @@ fun Route.soknadPage(
         call.respondHtmlContent(
             "Min side søknad test producer", {
                 h1 { +"Om søknaden" }
-                dl {
+                dl("navds-form-summary__answers") {
                     unsafe {+ descriptionItems("tittel", soknad.tittel)}
                     unsafe {+ descriptionItems("temakode", soknad.temakode)}
                     unsafe {+ descriptionItems("linkSoknad", soknad.linkSoknad)}
@@ -45,6 +45,8 @@ fun Route.soknadPage(
 
 
 fun descriptionItems (label: String, value: String?) = createHTML().run{
-    dt { + label}
-    dd { + (value ?: "null") }
+    div("navds-form-summary__answer"){
+        dt("navds-label") { + label}
+        dd("navds-form-summary__value navds-body-long navds-body-long--medium") { + (value ?: "null") }
+    }
 }
