@@ -56,6 +56,6 @@ application {
 
 configurations.all {
     resolutionStrategy {
-        force("net.minidev:json-smart:2.5.1")
+        force("net.minidev:json-smart:2.5.2")
     }
 }
