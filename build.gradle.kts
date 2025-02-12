@@ -26,6 +26,7 @@ dependencies {
     implementation(Ktor.Server.statusPages)
     implementation(Ktor.Server.auth)
     implementation(Ktor.Server.authJwt)
+    implementation(Ktor.Server.contentNegotiation)
     implementation(Ktor.Client.contentNegotiation)
     implementation(Ktor.Client.apache)
     implementation(Ktor.Client.core)
