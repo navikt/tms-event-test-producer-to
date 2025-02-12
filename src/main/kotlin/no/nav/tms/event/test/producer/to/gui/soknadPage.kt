@@ -25,6 +25,12 @@ fun Route.soknadPage(
 
         call.respondHtmlContent(
             "Min side søknad test producer", {
+                a(
+                    href = "",
+                    classes = "navds-link navds-link--action tilbake-til-alle-soknader"
+                ) {
+                    +"Tilbake til alle søknader"
+                }
                 h1 { +"Detaljer om søknad" }
                 dl("navds-form-summary__answers") {
                     unsafe { +descriptionItems("tittel", soknad.tittel) }
@@ -66,7 +72,7 @@ fun Route.soknadPage(
                                         a(
                                             href = "#",
                                             classes = "navds-link navds-link--action marker-som-mottatt"
-                                        ) { +"Marker som mottatt"}
+                                        ) { +"Marker som mottatt" }
                                     }
                                 }
                             }
