@@ -18,6 +18,8 @@ dependencies {
     implementation(KotliQuery.kotliquery)
     implementation(KotlinLogging.logging)
     implementation(Logstash.logbackEncoder)
+    implementation(JacksonDatatype.datatypeJsr310)
+    implementation(Ktor.Serialization.jackson)
     implementation(Ktor.Server.core)
     implementation(Ktor.Server.netty)
     implementation(Ktor.Server.htmlDsl)
