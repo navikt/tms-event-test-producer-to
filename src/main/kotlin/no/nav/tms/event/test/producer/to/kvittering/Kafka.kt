@@ -1,12 +1,12 @@
 package no.nav.tms.event.test.producer.to.kvittering
 
-import com.fasterxml.jackson.databind.ser.std.StringSerializer
 import no.nav.tms.common.util.config.StringEnvVar.getEnvVar
 import org.apache.kafka.clients.CommonClientConfigs
 import org.apache.kafka.clients.producer.KafkaProducer
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.config.SaslConfigs
 import org.apache.kafka.common.config.SslConfigs
+import org.apache.kafka.common.serialization.StringSerializer
 import java.util.*
 
 object Kafka {
