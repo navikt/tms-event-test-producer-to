@@ -21,8 +21,8 @@ fun Route.startPage(
 
         call.respondHtmlContent(
             "Min side søknad test producer", {
-                h1 { +"Opprett soknadskvittering" }
-                p { +"Her kan du opprette og redigere søknadseventer for testing på Min side. " }
+                h1 { +"Soknad event producer" }
+                p { +"Dette er et internt grensesnitt for testing. Her kan du hente søknader og endre eksisterende søknader med Kafka-eventer." }
                 h2 { +"Liste med soknadskvitteringer" }
                 ul {
                     soknadsKvitteringer.map { kvittering ->
