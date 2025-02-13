@@ -61,8 +61,8 @@ fun Route.opprettSoknad() {
                         }
                         div("navds-input form-group") {
                             label {
-                                htmlFor = "linkSoknad (optional)"
-                                +"Link til soknad"
+                                htmlFor = "linkSoknad"
+                                +"Link til soknad (optional)"
                             }
                             input {
                                 id = "linkSoknad"
@@ -72,8 +72,8 @@ fun Route.opprettSoknad() {
                         }
                         div("navds-input form-group") {
                             label {
-                                htmlFor = "journalpostId (optional)"
-                                +"JournalpostId"
+                                htmlFor = "journalpostId"
+                                +"JournalpostId (optional)"
                             }
                             input {
                                 id = "journalpostId"
