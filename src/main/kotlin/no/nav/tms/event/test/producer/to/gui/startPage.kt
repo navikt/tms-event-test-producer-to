@@ -37,15 +37,6 @@ fun Route.startPage(
                         }
                     }
                 }
-                ul {
-                    soknadsKvitteringer.map { kvittering ->
-                        li {
-                            a(href = "/soknad/${kvittering.soknadsId}") {
-                                +kvittering.tittel
-                            }
-                        }
-                    }
-                }
 
             }, Environment.navDecoratorenUrl
         )
