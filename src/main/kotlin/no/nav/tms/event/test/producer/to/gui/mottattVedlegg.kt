@@ -49,7 +49,8 @@ fun Route.mottattVedlegg(
                 ) {
                     +"Tilbake til soknad"
                 }
-                h1(classes = "--a-font-size-heading-medium") { +"vedleggMottatt event har blitt sendt til tms-soknadskvittering" }
+                h1(classes = "navds-heading navds-heading--large") { +"Event vedleggMottatt er sendt"}
+
             }, Environment.navDecoratorenUrl
         )
     }
