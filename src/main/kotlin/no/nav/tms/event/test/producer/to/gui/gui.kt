@@ -54,6 +54,7 @@ fun Application.gui(
             startPage(tokenFetcher, soknadskvitteringUrl, httpClient)
             soknadPage(tokenFetcher, soknadskvitteringUrl, httpClient)
             mottattVedlegg(soknadEventProducer)
+            opprettSoknad()
         }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
