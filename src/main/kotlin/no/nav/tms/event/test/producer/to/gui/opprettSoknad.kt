@@ -31,6 +31,7 @@ fun Route.opprettSoknad() {
                                 id = "tittel"
                                 name = "tittel"
                                 type = InputType.text
+                                required = true
                             }
                         }
                         div("navds-input form-group") {
@@ -42,17 +43,7 @@ fun Route.opprettSoknad() {
                                 id = "temakode"
                                 name = "temakode"
                                 type = InputType.text
-                            }
-                        }
-                        div("navds-input form-group") {
-                            label {
-                                htmlFor = "linkSoknad"
-                                +"Link til soknad"
-                            }
-                            input {
-                                id = "linkSoknad"
-                                name = "linkSoknad"
-                                type = InputType.text
+                                required = true
                             }
                         }
                         div("navds-input form-group") {
@@ -64,11 +55,23 @@ fun Route.opprettSoknad() {
                                 id = "skjemanummer"
                                 name = "skjemanummer"
                                 type = InputType.text
+                                required = true
                             }
                         }
                         div("navds-input form-group") {
                             label {
-                                htmlFor = "journalpostId"
+                                htmlFor = "linkSoknad (optional)"
+                                +"Link til soknad"
+                            }
+                            input {
+                                id = "linkSoknad"
+                                name = "linkSoknad"
+                                type = InputType.text
+                            }
+                        }
+                        div("navds-input form-group") {
+                            label {
+                                htmlFor = "journalpostId (optional)"
                                 +"JournalpostId"
                             }
                             input {
@@ -79,13 +82,14 @@ fun Route.opprettSoknad() {
                         }
                         div("navds-input form-group") {
                             label {
-                                htmlFor = "fristEttersending"
+                                htmlFor = "fristEttersending "
                                 +"Frist ettersending"
                             }
                             input {
                                 id = "fristEttersending"
                                 name = "fristEttersending"
                                 type = InputType.date
+                                required = true
                             }
                         }
                         button {
