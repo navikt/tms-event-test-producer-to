@@ -85,7 +85,7 @@ fun Route.opprettSoknad() {
                             input {
                                 id = "fristEttersending"
                                 name = "fristEttersending"
-                                type = InputType.dateTimeLocal
+                                type = InputType.date
                             }
                         }
                         button {
