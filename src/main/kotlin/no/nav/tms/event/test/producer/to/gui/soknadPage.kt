@@ -59,7 +59,7 @@ fun Route.soknadPage(
                                     ul {
                                         li { +mottattVedlegg.tittel }
                                     }
-                                }
+                                }.ifEmpty { p { + "Ingen vedlegger" } }
                             }
                         }
                     }
@@ -79,7 +79,7 @@ fun Route.soknadPage(
                                         ) { +"Marker som mottatt" }
                                     }
                                 }
-                            }
+                            }.ifEmpty { p { + "Ingen vedlegger" } }
 
                         }
                     }
