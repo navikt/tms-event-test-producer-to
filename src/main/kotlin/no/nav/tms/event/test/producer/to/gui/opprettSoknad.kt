@@ -42,6 +42,7 @@ fun Route.opprettSoknad() {
                             input {
                                 id = "temakode"
                                 name = "temakode"
+                                maxLength = "3"
                                 type = InputType.text
                                 required = true
                             }
