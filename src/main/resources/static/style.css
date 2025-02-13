@@ -49,3 +49,8 @@ h2{
     flex-direction: column;
     margin-bottom: 1rem;
 }
+
+
+.opprett-soknad-form{
+    max-width: 640px;
+}

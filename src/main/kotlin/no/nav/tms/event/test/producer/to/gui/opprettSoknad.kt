@@ -16,7 +16,7 @@ fun Route.opprettSoknad() {
                     +"Tilbake til alle søknader"
                 }
                 h1(classes = "navds-heading navds-heading--medium") { +"Opprett ny soknad" }
-                form {
+                form(classes = "opprett-soknad-form") {
                     action = "/soknad/opprettet"
                     method = FormMethod.get
                     encType = FormEncType.multipartFormData
