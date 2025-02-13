@@ -48,7 +48,7 @@ fun Route.mottattVedlegg(
                     href = "/soknad/${mottattVedlegg.soknadsId}",
                     classes = "navds-link navds-link--action tilbake-til-alle-soknader"
                 ) {
-                    +"Tilbake til soknad"
+                    +"Tilbake til søknad"
                 }
                 h1(classes = "navds-heading navds-heading--medium") { +"Event vedleggMottatt er sendt med følgende data:" }
                 dl("navds-form-summary__answers") {

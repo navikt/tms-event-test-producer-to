@@ -85,7 +85,7 @@ fun Route.soknadPage(
                     }
 
                 }
-                h2("heading-andre-eventer"){ + "Andre eventer knyttet til denne soknaden" }
+                h2("heading-andre-eventer"){ + "Andre eventer knyttet til denne søknaden" }
                 ul{
                     li{
                         a(
