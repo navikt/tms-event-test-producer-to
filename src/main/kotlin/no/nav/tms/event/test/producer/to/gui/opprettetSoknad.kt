@@ -30,7 +30,6 @@ fun Route.opprettetSoknad(
         val token = IdportenUserFactory.createIdportenUser(call).tokenString
 
 
-        call.parameters["vedleggsId"] ?: throw IllegalArgumentException("Parameter 'vedleggId' is missing")
         val soknad = SoknadRequest.Opprett(
             tittel = tittel,
             temakode = temakode,
