@@ -70,7 +70,7 @@ fun Route.soknadPage(
                                     li {
                                         span { +mottattVedlegg.tittel }
                                         a(
-                                            href = """/vedlegg/motta?soknadsId=${id}&vedleggsId=${mottattVedlegg.vedleggsId}
+                                            href = """/soknad/vedlegg/motta?soknadsId=${id}&vedleggsId=${mottattVedlegg.vedleggsId}
                                                 &brukerErAvsender=${mottattVedlegg.brukerErAvsender}
                                                 &tittel=${mottattVedlegg.tittel}
                                                 &linkVedlegg=${mottattVedlegg.linkEttersending}""".filterNot(Char::isWhitespace),
