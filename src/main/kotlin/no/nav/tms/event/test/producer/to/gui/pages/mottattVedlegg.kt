@@ -1,4 +1,4 @@
-package no.nav.tms.event.test.producer.to.gui
+package no.nav.tms.event.test.producer.to.gui.pages
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ktor.http.*
@@ -7,6 +7,8 @@ import io.ktor.server.routing.*
 import kotlinx.html.*
 import no.nav.tms.event.test.producer.to.Environment
 import no.nav.tms.event.test.producer.to.gui.components.descriptionItems
+import no.nav.tms.event.test.producer.to.gui.getStringOrNull
+import no.nav.tms.event.test.producer.to.gui.respondHtmlContent
 import no.nav.tms.event.test.producer.to.kvittering.SoknadEventProducer
 import no.nav.tms.event.test.producer.to.kvittering.SoknadRequest
 import no.nav.tms.soknad.event.validation.SoknadsKvitteringValidationException

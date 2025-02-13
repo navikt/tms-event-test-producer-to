@@ -1,9 +1,10 @@
-package no.nav.tms.event.test.producer.to.gui
+package no.nav.tms.event.test.producer.to.gui.pages
 
 import io.ktor.client.*
 import io.ktor.server.routing.*
 import kotlinx.html.*
 import no.nav.tms.event.test.producer.to.Environment
+import no.nav.tms.event.test.producer.to.gui.respondHtmlContent
 import no.nav.tms.event.test.producer.to.kvittering.fetchKvitteringer
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
 import no.nav.tms.token.support.idporten.sidecar.user.IdportenUserFactory

@@ -1,12 +1,13 @@
-package no.nav.tms.event.test.producer.to.gui
+package no.nav.tms.event.test.producer.to.gui.pages.etterspor
 
 import io.ktor.server.routing.*
 import kotlinx.html.*
 import no.nav.tms.event.test.producer.to.Environment
+import no.nav.tms.event.test.producer.to.gui.respondHtmlContent
 
 
-fun Route.opprettSoknad() {
-    get("soknad/opprett") {
+fun Route.ettersporVedlegg() {
+    get("soknad/etterspor") {
         call.respondHtmlContent(
             "Min side søknad test producer", {
                 a(
@@ -15,13 +16,49 @@ fun Route.opprettSoknad() {
                 ) {
                     +"Tilbake til alle søknader"
                 }
-                h1(classes = "navds-heading navds-heading--medium") { +"Opprett ny soknad" }
-                form(classes = "opprett-soknad-form") {
-                    action = "/soknad/opprettet"
+                h1(classes = "navds-heading navds-heading--medium") { +"Etterspør vedlegg til søknad" }
+                form{
+                    action = "/soknad/etterspurt"
                     method = FormMethod.get
                     encType = FormEncType.multipartFormData
                     fieldSet {
-                        legend { +"Detaljer om søknad" }
+                        legend { +"Detaljer om vedlegg" }
+                        div("navds-input form-group") {
+                            label {
+                                htmlFor = "soknadsId"
+                                +"SøknadsId"
+                            }
+                            input {
+                                id = "soknadsId"
+                                name = "soknadsId"
+                                type = InputType.text
+                                required = true
+                            }
+                        }
+                        div("navds-input form-group") {
+                            label {
+                                htmlFor = "vedleggsId"
+                                +"VedleggsId"
+                            }
+                            input {
+                                id = "vedleggsId"
+                                name = "vedleggsId"
+                                type = InputType.text
+                                required = true
+                            }
+                        }
+                        div("navds-input form-group") {
+                            label {
+                                htmlFor = "brukerErAvsender"
+                                +"Bruker er avsender"
+                            }
+                            input {
+                                id = "brukerErAvsender"
+                                name = "brukerErAvsender"
+                                type = InputType.text
+                                required = true
+                            }
+                        }
                         div("navds-input form-group") {
                             label {
                                 htmlFor = "tittel"
@@ -36,69 +73,34 @@ fun Route.opprettSoknad() {
                         }
                         div("navds-input form-group") {
                             label {
-                                htmlFor = "temakode"
-                                +"Temakode"
+                                htmlFor = "linkVedlegg"
+                                +"Link til ettersending (optional)"
                             }
                             input {
-                                id = "temakode"
-                                name = "temakode"
-                                maxLength = "3"
-                                type = InputType.text
-                                required = true
-                            }
-                        }
-                        div("navds-input form-group") {
-                            label {
-                                htmlFor = "skjemanummer"
-                                +"Skjemanummer"
-                            }
-                            input {
-                                id = "skjemanummer"
-                                name = "skjemanummer"
-                                type = InputType.text
-                                required = true
-                            }
-                        }
-                        div("navds-input form-group") {
-                            label {
-                                htmlFor = "linkSoknad"
-                                +"Link til soknad (optional)"
-                            }
-                            input {
-                                id = "linkSoknad"
-                                name = "linkSoknad"
+                                id = "linkEttersending"
+                                name = "linkEttersending"
                                 type = InputType.text
                             }
                         }
                         div("navds-input form-group") {
                             label {
-                                htmlFor = "journalpostId"
-                                +"JournalpostId (optional)"
+                                htmlFor = "beskrivelse"
+                                +"Beskrivelse (optional)"
                             }
                             input {
-                                id = "journalpostId"
-                                name = "journalpostId"
+                                id = "beskrivelse"
+                                name = "beskrivelse"
                                 type = InputType.text
                             }
                         }
-                        div("navds-input form-group") {
-                            label {
-                                htmlFor = "fristEttersending "
-                                +"Frist ettersending"
-                            }
-                            input {
-                                id = "fristEttersending"
-                                name = "fristEttersending"
-                                type = InputType.date
-                                required = true
-                            }
-                        }
+
                         button {
                             type = ButtonType.submit
-                            +"Opprett soknad"
+                            +"Etterspør vedlegg"
                         }
                     }
                 }
+
 
             }, Environment.navDecoratorenUrl
         )

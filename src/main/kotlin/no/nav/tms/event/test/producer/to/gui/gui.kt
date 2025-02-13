@@ -9,6 +9,8 @@ import io.ktor.server.http.content.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import no.nav.tms.event.test.producer.to.gui.pages.*
+import no.nav.tms.event.test.producer.to.gui.pages.etterspor.ettersporVedlegg
 import no.nav.tms.event.test.producer.to.kvittering.SoknadEventProducer
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
 import no.nav.tms.token.support.idporten.sidecar.LevelOfAssurance
@@ -56,6 +58,7 @@ fun Application.gui(
             mottattVedlegg(soknadEventProducer)
             opprettSoknad()
             opprettetSoknad(soknadEventProducer)
+            ettersporVedlegg()
         }
         staticResources("/static", "static") {
             preCompressed(CompressedFileType.GZIP)
