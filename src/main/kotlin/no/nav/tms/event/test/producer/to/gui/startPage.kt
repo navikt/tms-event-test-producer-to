@@ -23,7 +23,20 @@ fun Route.startPage(
             "Min side søknad test producer", {
                 h1 { +"Soknad event producer" }
                 p { +"Dette er et internt grensesnitt for testing. Her kan du hente søknader og endre eksisterende søknader med Kafka-eventer." }
-                h2 { +"Liste med soknadskvitteringer" }
+                h2("heading-soknadsliste") { +"Liste med soknadskvitteringer" }
+                if(soknadsKvitteringer.isEmpty()) {
+                    p{+"Ingen soknader på denne brukeren"}
+                }else{
+                    ul {
+                        soknadsKvitteringer.map { kvittering ->
+                            li {
+                                a(href = "/soknad/${kvittering.soknadsId}") {
+                                    +kvittering.tittel
+                                }
+                            }
+                        }
+                    }
+                }
                 ul {
                     soknadsKvitteringer.map { kvittering ->
                         li {
