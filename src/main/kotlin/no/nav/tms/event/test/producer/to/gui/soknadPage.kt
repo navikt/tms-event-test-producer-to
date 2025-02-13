@@ -83,6 +83,24 @@ fun Route.soknadPage(
 
                         }
                     }
+
+                }
+                h2{ + "Andre eventer knyttet til denne soknaden" }
+                ul{
+                    li{
+                        a(
+                            href = """/soknad/ettersporsel/vedlegg?soknadsId=${id}""".filterNot(Char::isWhitespace),
+                            classes = "navds-link navds-link--action etterspor-vedlegg"
+                        ) { +"Etterspør vedlegg" }
+                    }
+                    li { a(
+                        href = """/soknad/ferdigstill?soknadsId=${id}""".filterNot(Char::isWhitespace),
+                        classes = "navds-link navds-link--action ferdigstill-soknad"
+                    ) { +"Ferdigstill søknad" } }
+                    li { a(
+                        href = """/soknad/oppdater?soknadsId=${id}""".filterNot(Char::isWhitespace),
+                        classes = "navds-link navds-link--action oppdater-soknad"
+                    ) { +"Oppdater søknad" } }
                 }
 
             }, Environment.navDecoratorenUrl
