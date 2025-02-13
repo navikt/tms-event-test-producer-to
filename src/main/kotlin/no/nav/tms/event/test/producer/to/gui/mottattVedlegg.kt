@@ -23,7 +23,9 @@ fun Route.mottattVedlegg(
         val vedleggsId = call.request.queryParameters["vedleggsId"] ?: throw IllegalArgumentException("Parameter 'vedleggsId' is missing")
         val brukerErAvsender = call.request.queryParameters["brukerErAvsender"]?.toBoolean() ?: throw IllegalArgumentException("Parameter 'brukerErAvsender' is missing")
         val tittel = call.request.queryParameters["tittel"] ?: throw IllegalArgumentException("Parameter 'tittel' is missing")
-        val linkVedlegg = call.request.queryParameters["linkVedlegg"]
+        val linkVedlegg = getStringOrNull(call.request.queryParameters["linkVedlegg"])
+
+
 
 
 

@@ -24,11 +24,9 @@ fun Route.opprettetSoknad(
         val temakode = call.parameters["temakode"] ?: throw IllegalArgumentException("Parameter 'temakode' is missing")
         val fristEttersending = call.parameters["fristEttersending"] ?: throw IllegalArgumentException("Parameter 'fristEttersending' is missing")
         val skjemanummer = call.parameters["skjemanummer"] ?: throw IllegalArgumentException("Parameter 'skjemanummer' is missing")
-        val linkSoknad = call.parameters["linkSoknad"]
-        val journalpostId = call.parameters["journalpostId"]
+        val linkSoknad = getStringOrNull(call.parameters["linkSoknad"])
+        val journalpostId = getStringOrNull(call.parameters["journalpostId"])
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-        val token = IdportenUserFactory.createIdportenUser(call).tokenString
-
 
         val soknad = SoknadRequest.Opprett(
             tittel = tittel,
