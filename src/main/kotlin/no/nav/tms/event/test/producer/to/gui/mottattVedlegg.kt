@@ -6,6 +6,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.html.*
 import no.nav.tms.event.test.producer.to.Environment
+import no.nav.tms.event.test.producer.to.gui.components.descriptionItems
 import no.nav.tms.event.test.producer.to.kvittering.SoknadEventProducer
 import no.nav.tms.event.test.producer.to.kvittering.SoknadRequest
 import no.nav.tms.soknad.event.validation.SoknadsKvitteringValidationException
@@ -49,7 +50,14 @@ fun Route.mottattVedlegg(
                 ) {
                     +"Tilbake til soknad"
                 }
-                h1(classes = "navds-heading navds-heading--large") { +"Event vedleggMottatt er sendt"}
+                h1(classes = "navds-heading navds-heading--medium") { +"Event vedleggMottatt er sendt med følgende data:" }
+                dl("navds-form-summary__answers") {
+                    unsafe { +descriptionItems("soknadsId", mottattVedlegg.soknadsId) }
+                    unsafe { +descriptionItems("vedleggsId", mottattVedlegg.vedleggsId) }
+                    unsafe { +descriptionItems("brukerErAvsender", mottattVedlegg.brukerErAvsender.toString()) }
+                    unsafe { +descriptionItems("tittel", mottattVedlegg.tittel) }
+                    unsafe { +descriptionItems("linkVedlegg", mottattVedlegg.linkVedlegg) }
+                }
 
             }, Environment.navDecoratorenUrl
         )

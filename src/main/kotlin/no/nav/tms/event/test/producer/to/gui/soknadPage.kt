@@ -5,6 +5,7 @@ import io.ktor.server.routing.*
 import kotlinx.html.*
 import kotlinx.html.stream.createHTML
 import no.nav.tms.event.test.producer.to.Environment
+import no.nav.tms.event.test.producer.to.gui.components.descriptionItems
 import no.nav.tms.event.test.producer.to.kvittering.fetchEnkelSoknad
 import no.nav.tms.event.test.producer.to.tokenexchange.TokenFetcher
 import no.nav.tms.token.support.idporten.sidecar.user.IdportenUserFactory
@@ -89,10 +90,3 @@ fun Route.soknadPage(
     }
 }
 
-
-fun descriptionItems(label: String, value: String?) = createHTML().run {
-    div("navds-form-summary__answer") {
-        dt("navds-label") { +label }
-        dd("navds-form-summary__value navds-body-long navds-body-long--medium") { +(value ?: "null") }
-    }
-}
