@@ -70,7 +70,10 @@ fun Route.soknadPage(
                                     li {
                                         span { +mottattVedlegg.tittel }
                                         a(
-                                            href = "#",
+                                            href = """/vedlegg/motta?soknadsId=${id}&vedleggsId=${mottattVedlegg.vedleggsId}
+                                                &brukerErAvsender=${mottattVedlegg.brukerErAvsender}
+                                                &tittel=${mottattVedlegg.tittel}
+                                                &linkVedlegg=${mottattVedlegg.linkEttersending}""".filterNot(Char::isWhitespace),
                                             classes = "navds-link navds-link--action marker-som-mottatt"
                                         ) { +"Marker som mottatt" }
                                     }
