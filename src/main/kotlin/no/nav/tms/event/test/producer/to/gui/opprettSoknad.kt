@@ -22,7 +22,7 @@ fun Route.opprettSoknad() {
                     encType = FormEncType.multipartFormData
                     fieldSet {
                         legend { +"Detaljer om søknad" }
-                        div("navds-input") {
+                        div("navds-input form-group") {
                             label {
                                 htmlFor = "tittel"
                                 +"Tittel"
@@ -33,7 +33,7 @@ fun Route.opprettSoknad() {
                                 type = InputType.text
                             }
                         }
-                        div("navds-input") {
+                        div("navds-input form-group") {
                             label {
                                 htmlFor = "temakode"
                                 +"Temakode"
@@ -44,7 +44,7 @@ fun Route.opprettSoknad() {
                                 type = InputType.text
                             }
                         }
-                        div("navds-input") {
+                        div("navds-input form-group") {
                             label {
                                 htmlFor = "linkSoknad"
                                 +"Link til soknad"
@@ -55,7 +55,7 @@ fun Route.opprettSoknad() {
                                 type = InputType.text
                             }
                         }
-                        div("navds-input") {
+                        div("navds-input form-group") {
                             label {
                                 htmlFor = "skjemanummer"
                                 +"Skjemanummer"
@@ -66,7 +66,7 @@ fun Route.opprettSoknad() {
                                 type = InputType.text
                             }
                         }
-                        div("navds-input") {
+                        div("navds-input form-group") {
                             label {
                                 htmlFor = "journalpostId"
                                 +"JournalpostId"
@@ -77,7 +77,7 @@ fun Route.opprettSoknad() {
                                 type = InputType.text
                             }
                         }
-                        div("navds-input") {
+                        div("navds-input form-group") {
                             label {
                                 htmlFor = "fristEttersending"
                                 +"Frist ettersending"
@@ -90,6 +90,7 @@ fun Route.opprettSoknad() {
                         }
                         button {
                             type = ButtonType.submit
+                            +"Opprett soknad"
                         }
                     }
                 }
