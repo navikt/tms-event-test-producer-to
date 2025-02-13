@@ -24,9 +24,9 @@ fun Route.startPage(
                 h1 { +"Soknad event producer" }
                 p { +"Dette er et internt grensesnitt for testing. Her kan du hente søknader og endre eksisterende søknader med Kafka-eventer." }
                 h2("heading-soknadsliste") { +"Liste med soknadskvitteringer" }
-                if(soknadsKvitteringer.isEmpty()) {
-                    p{+"Ingen soknader på denne brukeren"}
-                }else{
+                if (soknadsKvitteringer.isEmpty()) {
+                    p { +"Ingen soknader på denne brukeren" }
+                } else {
                     ul {
                         soknadsKvitteringer.map { kvittering ->
                             li {
@@ -37,6 +37,10 @@ fun Route.startPage(
                         }
                     }
                 }
+                a(
+                    classes = "navds-link navds-link--action opprett-soknad",
+                    href = "/soknad/opprett"
+                ) { +"Opprett ny søknad" }
 
             }, Environment.navDecoratorenUrl
         )
